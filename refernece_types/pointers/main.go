@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // reference types (pointers, slices, maps, functions, channels)
 
@@ -19,12 +21,12 @@ func main() {
 	*myFirstPointer = 15
 	fmt.Println("x is now", x)
 
-	changeValueOfPointer(&x)
+	changeValueOfPointer(&x, 200)
 	fmt.Println("After the function call the x is now", x)
 }
 
 // an example of how you can change the value of a varible without having it
 // in the scope of the function using the pointers.
-func changeValueOfPointer(num *int) {
-	*num = 25
+func changeValueOfPointer(num *int, value int) {
+	*num = value
 }
